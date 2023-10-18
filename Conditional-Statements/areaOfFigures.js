@@ -1,26 +1,24 @@
-function areaOfFigures(input) {
-    let figures = input[0];
-    let result = 0;
+function areaOfFigures(input){
+    let type = input[0];
+    let area = 0;
 
-    if (figures === "square") {
+    if(type == "square") {
         let a = Number(input[1]);
-        result = a * a;
-        console.log(result.toFixed(3));
-    } else if (figures === "rectangle") {
+        area = a * a;
+    } else if(type == "rectangle") {
         let a = Number(input[1]);
         let b = Number(input[2]);
-        result = a * b;
-        console.log(result.toFixed(3));
-    } else if (figures === "circle") {
-        let r = Number(input[1]);
-        result = Math.PI * (Math.pow(r, 2));
-        console.log(result.toFixed(3));
-    } else {
+        area = a * b;
+    } else if(type == "circle") {
         let a = Number(input[1]);
-        let h = Number(input[2]);
-        result = (a * h) / 2;
-        console.log(result.toFixed(3));
+        area = Math.PI * a * a;
+    } else if(type == "triangle") {
+        let a = Number(input[1]);
+        let b = Number(input[2]);
+        area = (a * b) / 2;
     }
+
+    console.log(area.toFixed(3));
 }
 
-areaOfFigures(["triangle", "4.5", "20"]);
+areaOfFigures(["rectangle", "7", "2.5"]);
