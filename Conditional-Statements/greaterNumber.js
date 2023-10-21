@@ -2,11 +2,11 @@ function greaterNumber(input) {
     let a = Number(input[0]);
     let b = Number(input[1]);
 
-    if (a > b) {
+    if(a > b) {
         console.log(a);
-    } else {
+    } else
         console.log(b);
-    }
+
 }
 
-greaterNumber(["5","3"]);
+greaterNumber(["5", "3"]);
