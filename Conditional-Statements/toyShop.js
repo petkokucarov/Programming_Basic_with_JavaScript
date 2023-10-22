@@ -1,28 +1,32 @@
-function toyShop (input) {
+function toyShop(input) {
+    let price = Number(input[0]);
+    let puzzleNum = Number(input[1]);
+    let dollNum = Number(input[2]);
+    let bearNum = Number(input[3]);
+    let minnionNum = Number(input[4]);
+    let trackNum = Number(input[5]);
 
-    let priceExcursion = Number(input[0]);
-    let puzzles = Number(input[1]);
-    let dolls = Number(input[2]);
-    let bears = Number(input[3]);
-    let minions = Number(input[4]);
-    let tracks = Number(input[5]);
+    let puzzlePrice = puzzleNum * 2.60;
+    let dollPrice = dollNum * 3;
+    let bearPrice = bearNum * 4.10;
+    let minnionPrice = minnionNum * 8.20;
+    let trackPrice = trackNum * 2;
 
-    let price = puzzles * 2.60 + dolls * 3 + bears * 4.10 + minions * 8.20 + tracks * 2;
-    let toys = puzzles + dolls + bears + minions + tracks;
+    let sum = puzzlePrice + dollPrice + bearPrice + minnionPrice + trackPrice;
 
-    if (toys >= 50) {
-        price = price - (price * 0.25);
+    if(puzzleNum + dollNum + bearNum + minnionNum + trackNum >= 50) {
+        sum = sum * 0.75;
     }
 
-    let rent = price * 0.10;
-    let win = price - rent;
+    sum = sum * 0.9;
 
-    if (win >= priceExcursion) {
-        console.log(`Yes! ${(win - priceExcursion).toFixed(2)} lv left.`);
+    if(sum >= price) {
+        let diff = (sum - price).toFixed(2);
+        console.log(`Yes! ${diff} lv left.`);
     } else {
-        console.log(`Not enough money! ${(priceExcursion - win).toFixed(2)} lv needed.`);
+        let diff = (Math.abs(sum - price)).toFixed(2);
+        console.log(`Not enough money! ${diff} lv needed.`);
     }
-    
 }
 
-toyShop(["320", "8", "2", "5", "5", "1"]);
+toyShop(["40.8", "20", "25", "30", "50", "10"]);
